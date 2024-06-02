@@ -1,0 +1,21 @@
+{
+  "name": "NextJS-first-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/victorres85/NextJS-first-project.git",
+  "author": "victor-pi-almeida <victorres.almeida@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "dev":  "next dev",
+    "build": "rm -rf out && next build && mv ./out ./build",
+    "export": "next export",
+    "lint": "next lint",
+    "start": "next start"
+
+  }
+}
