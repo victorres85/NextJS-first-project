@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf out && next build &&next export && mv ./out ./build",
+    "build": "rm -rf out && next build && mv ./out ./build",
     "export": "next export",
     "lint": "next lint",
     "lin:fixt": "next lint --fix",
