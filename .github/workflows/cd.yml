@@ -2,9 +2,9 @@ name: "CD: Main Workflow"
 run-name: ${{ github.actor }} Deployment Workflow
 
 env:
-  VERCEL_TOKEN: ${{ secrets.FIRST_NEXTJS_PROJECT_VERCEL_TOKEN }}
-  VERCEL_ORG_ID: ${{ secrets.FIRST_NEXTJS_PROJECT_VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.FIRST_NEXTJS_PROJECT_VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.FIRST_NEXTJS_PROJECT.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.FIRST_NEXTJS_PROJECT.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.FIRST_NEXTJS_PROJECT.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -19,4 +19,6 @@ jobs:
         run: yarn install
 
       - name: Run Deploy
-        run: yarn deploy ${{ secrets.VERCEL_TOKEN }}
+        run: yarn deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
