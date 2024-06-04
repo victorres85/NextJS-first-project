@@ -1,9 +1,12 @@
 name: "CI: Main Workflow"
-run-name: ${{ github.actor }} Main Workflow
-# on:
-#   pull_request:
-#     types: [opened, synchronize]
-on: [push]
+run-name: ${{ github.actor }} CI Workflow
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "**.js"
+  push:
+    branches: ["main"]
 jobs:
   linter:
     runs-on: ubuntu-latest
