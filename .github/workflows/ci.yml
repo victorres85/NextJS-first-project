@@ -5,8 +5,8 @@ on:
     types: [opened, synchronize]
     paths:
       - "**.js"
-  push:
-    branches: ["main"]
+  # push:
+  #   branches: ["main"]
 jobs:
   linter:
     runs-on: ubuntu-latest
