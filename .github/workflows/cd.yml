@@ -21,4 +21,4 @@ jobs:
       - name: Run Deploy
         run: yarn deploy
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.FIRST_NEXTJS_PROJECT.VERCEL_TOKEN }}
