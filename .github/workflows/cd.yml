@@ -19,6 +19,4 @@ jobs:
         run: yarn install
 
       - name: Run Deploy
-        run: yarn deploy
-        env:
-          VERCEL_TOKEN: ${{ FIRST_NEXTJS_PROJECT.VERCEL_TOKEN }}
+        run: yarn build && vercel ./build --confirm --no-clipboard --token=${{ secrets.VERCEL_TOKEN }} --prod
