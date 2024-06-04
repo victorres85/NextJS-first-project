@@ -19,4 +19,6 @@ jobs:
         run: yarn install
 
       - name: Run Deploy
-        run: yarn deploy ${{ FIRST_NEXTJS_PROJECT.VERCEL_TOKEN }}
+        run: yarn deploy
+        env:
+          VERCEL_TOKEN: ${{ FIRST_NEXTJS_PROJECT.VERCEL_TOKEN }}
