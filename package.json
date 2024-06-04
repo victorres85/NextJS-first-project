@@ -11,11 +11,17 @@
     "react-dom": "^18.3.1"
   },
   "scripts": {
-    "dev":  "next dev",
+    "dev": "next dev",
     "build": "rm -rf out && next build && mv ./out ./build",
     "export": "next export",
     "lint": "next lint",
+    "lin:fixt": "next lint --fix",
     "start": "next start"
-
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "prettier": "^3.3.0",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0"
   }
 }
