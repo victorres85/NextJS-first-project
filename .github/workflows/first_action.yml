@@ -1,0 +1,14 @@
+name: "test github actions"
+
+on:
+  push:
+    pull_request:
+      types: [open, synchronize]
+
+jobs:
+  example-job:
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world!
