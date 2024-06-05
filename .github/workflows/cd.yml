@@ -5,6 +5,10 @@ env:
   VERCEL_TOKEN: ${{ vars.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN1: ${{ vars.VERCEL_TOKEN }}
+  VERCEL_TOKEN2: ${{ vars.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
+  VERCEL_TOKEN3: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_TOKEN4: ${{ secrets.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
 
 on:
   push:
@@ -22,9 +26,4 @@ jobs:
           echo "repository variable 2: $VERCEL_TOKEN2"
           echo "repository variable 3: $VERCEL_TOKEN3"
           echo "repository variable 4: $VERCEL_TOKEN4"
-        env:
-          VERCEL_TOKEN1: ${{ vars.VERCEL_TOKEN }}
-          VERCEL_TOKEN2: ${{ vars.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
-          VERCEL_TOKEN3: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_TOKEN4: ${{ secrets.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
 
