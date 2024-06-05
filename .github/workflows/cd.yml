@@ -1,14 +1,4 @@
 name: "CD: Main Workflow"
-run-name: ${{ github.actor }} Deployment Workflow
-
-env:
-  VERCEL_TOKEN: ${{ vars.VERCEL_TOKEN }}
-  VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
-  VERCEL_TOKEN1: ${{ secrets.TEST_SECRET }}
-  VERCEL_TOKEN2: ${{ vars.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
-  VERCEL_TOKEN3: ${{ secrets.VERCEL_TOKEN }}
-  VERCEL_TOKEN4: ${{ secrets.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
 
 on:
   push:
