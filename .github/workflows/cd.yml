@@ -12,6 +12,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ vars.FIRST-NEXTJS-PROJECT }}
     steps:
       - uses: actions/checkout@v4
 
@@ -19,6 +20,6 @@ jobs:
         run: yarn install
 
       - name: Run Deploy
-        run: yarn build
+        run: yarn deploy
         env:
           VERCEL_TOKEN: ${{ vars.VERCEL_TOKEN }}
