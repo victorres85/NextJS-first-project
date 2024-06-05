@@ -15,12 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: test
-        run: |
-          echo "VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}"
-          echo "VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}""
-          echo "VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}"
-
       - name: Run Installation
         run: yarn install
 
