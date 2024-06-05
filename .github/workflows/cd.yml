@@ -22,8 +22,8 @@ jobs:
       - name: test
         run: |
           echo "echo test"
-          echo "repository variable 1: $VERCEL_TOKEN1"
-          echo "repository variable 2: $VERCEL_TOKEN2"
+          echo "repository variable 1: $TEST_SECRET"
+          echo "repository variable 2: $TEST_SECRET2"
         env:
-          VERCEL_TOKEN1: ${{ secrets.TEST_SECRET }}
-          VERCEL_TOKEN2: ${{ vars.VERCEL_TOKEN2 }}
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+          TEST_SECRET2: ${{ vars.VERCEL_TOKEN2 }}
