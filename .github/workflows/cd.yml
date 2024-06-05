@@ -1,4 +1,10 @@
 name: "CD: Main Workflow"
+run-name: ${{ github.actor }} Deployment Workflow
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 on:
   push:
@@ -7,35 +13,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        env:
-          TEST_SECRET1: ${{ secrets.TEST_SECRET }}
-          TEST_SECRET2: ${{ vars.TEST_SECRET }}
-          TEST_SECRET3: ${{ secrets.VERCEL_TOKEN2 }}
-          TEST_SECRET4: ${{ vars.TEST }}
-          TEST_SECRET5: ${{ secrets.TEST }}
-          TEST_SECRET6: ${{ vars.TEST3 }}
-        run: |
-          echo "repository variable 1: $TEST_SECRET1"
-          echo "repository variable 2: $TEST_SECRET2"
-          echo "repository variable 3: $TEST_SECRET3"
-          echo "repository variable 4: $TEST_SECRET4"
-          echo "repository variable 5: $TEST_SECRET5"
-          echo "repository variable 6: $TEST_SECRET6"
+      - uses: actions/checkout@v4
+
       - name: test
         run: |
-          echo "echo test"
-          echo "repository variable 1: $TEST_SECRET1"
-          echo "repository variable 2: $TEST_SECRET2"
-          echo "repository variable 3: $TEST_SECRET3"
-          echo "repository variable 4: $TEST_SECRET4"
-          echo "repository variable 5: $TEST_SECRET5"
-          echo "repository variable 6: $TEST_SECRET6"
-        env:
-          TEST_SECRET1: ${{ secrets.TEST_SECRET }}
-          TEST_SECRET2: ${{ vars.TEST_SECRET }}
-          TEST_SECRET3: ${{ secrets.VERCEL_TOKEN2 }}
-          TEST_SECRET4: ${{ vars.TEST }}
-          TEST_SECRET5: ${{ secrets.TEST }}
-          TEST_SECRET6: ${{ vars.TEST3 }}
+          echo "VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}"
+          echo "VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}""
+          echo "VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}"
 
+      - name: Run Installation
+        run: yarn install
+
+      - name: Run Deploy
+        run: yarn deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
