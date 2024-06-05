@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Installation
-        run: yarn install
-
-      - name: Run Deploy
-        run: yarn deploy
+      - name: test
+        run: |
+          echo "echo test"
+          echo "repository variable : $VERCEL_TOKEN"
         env:
           VERCEL_TOKEN: ${{ vars.VERCEL_TOKEN }}
+
