@@ -12,14 +12,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ vars.FIRST-NEXTJS-PROJECT }}
     steps:
       - uses: actions/checkout@v4
 
       - name: test
         run: |
           echo "echo test"
-          echo "repository variable : $VERCEL_TOKEN"
+          echo "repository variable 1: $VERCEL_TOKEN1"
+          echo "repository variable 2: $VERCEL_TOKEN2"
+          echo "repository variable 3: $VERCEL_TOKEN3"
+          echo "repository variable 4: $VERCEL_TOKEN4"
         env:
-          VERCEL_TOKEN: ${{ vars.VERCEL_TOKEN }}
+          VERCEL_TOKEN1: ${{ vars.VERCEL_TOKEN }}
+          VERCEL_TOKEN2: ${{ vars.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
+          VERCEL_TOKEN3: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN4: ${{ secrets.FIRST-NEXTJS-PROJECT.VERCEL_TOKEN }}
 
