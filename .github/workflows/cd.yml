@@ -9,14 +9,33 @@ jobs:
     steps:
       - shell: bash
         env:
-          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+          TEST_SECRET1: ${{ secrets.TEST_SECRET }}
+          TEST_SECRET2: ${{ vars.TEST_SECRET }}
+          TEST_SECRET3: ${{ secrets.VERCEL_TOKEN2 }}
+          TEST_SECRET4: ${{ vars.VERCEL_TOKEN2 }}
+          TEST_SECRET5: ${{ secrets.TEST3 }}
+          TEST_SECRET6: ${{ vars.TEST3 }}
         run: |
+          echo "repository variable 1: $TEST_SECRET1"
           echo "repository variable 2: $TEST_SECRET2"
+          echo "repository variable 3: $TEST_SECRET3"
+          echo "repository variable 4: $TEST_SECRET4"
+          echo "repository variable 5: $TEST_SECRET5"
+          echo "repository variable 6: $TEST_SECRET6"
       - name: test
         run: |
           echo "echo test"
-          echo "repository variable 1: $TEST_SECRET"
+          echo "repository variable 1: $TEST_SECRET1"
           echo "repository variable 2: $TEST_SECRET2"
+          echo "repository variable 3: $TEST_SECRET3"
+          echo "repository variable 4: $TEST_SECRET4"
+          echo "repository variable 5: $TEST_SECRET5"
+          echo "repository variable 6: $TEST_SECRET6"
         env:
-          TEST_SECRET: ${{ secrets.TEST_SECRET }}
-          TEST_SECRET2: ${{ vars.VERCEL_TOKEN2 }}
+          TEST_SECRET1: ${{ secrets.TEST_SECRET }}
+          TEST_SECRET2: ${{ vars.TEST_SECRET }}
+          TEST_SECRET3: ${{ secrets.VERCEL_TOKEN2 }}
+          TEST_SECRET4: ${{ vars.VERCEL_TOKEN2 }}
+          TEST_SECRET5: ${{ secrets.TEST3 }}
+          TEST_SECRET6: ${{ vars.TEST3 }}
+
