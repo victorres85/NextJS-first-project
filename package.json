@@ -23,7 +23,7 @@
     "lin:fixt": "next lint --fix",
     "start": "next start",
     "deploy:prod": "yarn deploy --prod",
-    "deploy": "yarn build && vercel ./build --confirm --no-clipboard --token=${{secrets.VERCEL_TOKEN}} --prod"
+    "deploy": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
 
   },
   "devDependencies": {
