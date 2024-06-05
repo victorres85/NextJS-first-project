@@ -17,6 +17,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
+        env:
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        run: |
+          echo "repository variable 2: $TEST_SECRET2"
       - name: test
         run: |
           echo "echo test"
