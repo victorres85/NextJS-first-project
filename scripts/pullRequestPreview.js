@@ -1,6 +1,6 @@
 // import { execSync } from 'child_process';
 const { execSync } = require('child_process');
-const fetch = require('node-fetch');
+const {fetch} = require('node-fetch');
 
 
 console.log("[DEPLOY_PREVIEW]: STARTED");
