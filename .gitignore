@@ -5,3 +5,4 @@ node_modules/
 caching.yml
 .vscode/
 2-advanced-examples/
+ci_optimized.yml
