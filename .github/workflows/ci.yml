@@ -53,3 +53,13 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
+
+      - name: Cyppress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+
+      - name: Cyppress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: edge
