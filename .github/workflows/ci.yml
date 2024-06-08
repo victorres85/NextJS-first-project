@@ -2,12 +2,8 @@ name: "CI: Main Workflow"
 run-name: ${{ github.actor }} CI Workflow
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-    paths:
-      - "**.js"
   push:
-    branches: ["main"]
+    branches: ["*"]
 jobs:
   build:
     runs-on: ubuntu-latest
