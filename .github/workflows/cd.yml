@@ -22,6 +22,6 @@ jobs:
         run: yarn install
 
       - name: Run Production Deployment
-        run: yarn deploy:prod
+        run: yarn deploy:preview
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
