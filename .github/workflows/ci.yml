@@ -36,3 +36,19 @@ jobs:
         run: yarn deploy:preview
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+  test_e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cyppress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+
+      - name: Run Installation
+        run: yarn install
+
+      - name: Run test
+        run: yarn test:e2e
