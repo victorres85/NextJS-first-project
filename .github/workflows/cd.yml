@@ -13,6 +13,10 @@ env:
 on:
   pull_request:
     types: ['opened', synchronize]
+  push:
+    branches:
+      - '*'
+      - '!main'
 jobs:
   deploy:
     runs-on: ubuntu-latest
